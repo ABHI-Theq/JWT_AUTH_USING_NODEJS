@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.signup-box {
+    background-color: white;
+    padding: 40px;
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.signup-heading {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.signup-form {
+    width: 100%;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: #008080;
+    outline: none;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.checkbox-group input {
+    margin-right: 10px;
+}
+
+.checkbox-group label {
+    font-size: 14px;
+    color: #555;
+}
+
+.checkbox-group label a {
+    color: #008080;
+    text-decoration: none;
+}
+
+.signup-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #008080;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.signup-btn:hover {
+    background-color: #006666;
+}
+
+.login-link {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+.login-link a {
+    color: #008080;
+    text-decoration: none;
+}
+</style>
+<body>
+    <div class="container">
+        <div class="signup-box">
+            <h1 class="signup-heading">Create Your Account</h1>
+            <form action="<%= url %>/user/signup" method="post" class="signup-form">
+                <div class="input-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="fullname" required placeholder="Enter your full name">
+                </div>
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email">
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required placeholder="Enter your password">
+                </div>
+                <div class="input-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required placeholder="Confirm your password">
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I agree to the <a href="#">terms and conditions</a></label>
+                </div>
+                <button type="submit" class="signup-btn">Sign Up</button>
+            </form>
+            <div class="login-link">
+                Already have an account? <a href="/login">Log in here</a>.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

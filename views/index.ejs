@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JWT functioning</title>
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+}
+
+.card {
+    background-color: #fff;
+    /* display: inline; */
+    width: 350px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 10rem;
+}
+
+.moving-text {
+    font-size: 2.5em;
+    color: #6a1b9a;
+    animation: floatText 1s infinite alternate ease-in-out;
+}
+
+.message {
+    margin-top: 15px;
+    font-size: 1.2em;
+    color: #333;
+}
+ul{
+    display: flex;
+    gap: 3rem;
+    padding: 10px;
+    font-size: 1.5em;
+    margin-bottom: 1rem;
+    list-style-type: none;
+    /* border:2px solid black; */
+    a{
+        width: 10%;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        text-decoration: none;
+        color: black;
+        margin: auto;
+        background-color: white;
+        text-align: center;
+
+        border-radius: 10px;
+        padding: 5px;
+    }
+}
+
+.button-container {
+    text-align: center;
+}
+
+.stylish-button {
+    background: linear-gradient(45deg, #ff6f91, #ff9671, #ffc75f, #f9f871);
+    background-size: 300% 300%;
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-position 0.5s ease, transform 0.2s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+}
+
+.stylish-button:hover {
+    background-position: 100% 0;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.stylish-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.user-details {
+            background-color: #fff;
+            border: 2px solid #6a1b9a;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 350px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            /* margin-bottom: 20px; */
+        }
+
+        .logout-button {
+            background-color: #f44336;
+            text-decoration: none;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-size: 1.2em;
+        }
+
+
+@keyframes floatText {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-15px);
+    }
+}
+
+</style>
+<body>
+    <!-- <h1>Hello World</h1> -->
+     <ul>
+        <a href="/signup"><li id="signp">Sign Up</li></a>
+        <a href="/login"><li id="signn">Login</li></a>
+     </ul>
+    <div class="card">
+        <h2 class="moving-text">Welcome to my website</h2>
+        <div class="container">
+            <h1 class="moving-text">Happy Day!</h1>
+            <p class="message">Wishing you a day filled with happiness and love. Enjoy every moment!</p>
+        </div>
+    </div>
+
+    <% if(user){ %>
+    <div id="userDetails" class="user-details">
+        <h2>User Information</h2>
+        <p id="userName"><%=user.name %></p>
+        <p id="userEmail" style="margin-bottom: 20px;"><%=user.email%></p>
+        <a href="/logout" class="logout-button">Logout</a>
+    </div>
+    <% } %>
+
+    <a href="/insider">
+    <div class="button-container">
+        <a href="/insider" class="stylish-button">Click Me!</a>
+    </div></a>
+</body>
+<script src="./src/script.js"></script>
+</html>
